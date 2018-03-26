@@ -20,8 +20,10 @@ Both α or β-tubulin gene sequences will be extracted from NCBI database using 
 
 #### Performing multiple sequence alignment 
 I will employ a MAFFT module available on HPC class to align the sequences and save them in a fasta format. Depending on the type of analysis, I will convert the fasta file in different formats that suit a specific phylogenetic analysis method as described below. For example, to perform a maximum likelihood of protein sequences, I will save them to nexus format; whereas for distance analysis using NJ, I will convert them to phylip format. 
-Phylogenetic analyses 
-Maximum likelihood
+
+### Phylogenetic analyses 
+
+#### Maximum likelihood
 Maximum likelihood phylogenetic tree will be inferred using RAxML77 v.8.0.22 with the GAMMA-LG model of evolution for protein data and GTRGAMMA for nucleotide sequences. 
 
 #### Distance analyses (PHYLIP)
