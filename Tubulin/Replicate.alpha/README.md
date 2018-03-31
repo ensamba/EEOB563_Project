@@ -56,6 +56,17 @@ module load raxml
 raxmlHPC-PTHREADS-SSE3 -f a -m GTRGAMMA -o CAEEL  -p 12345 -x 12345 -# 1000 -s alphatub_nt.phy -n alphatub.bootstrap1
 ```
 This took only 04 minutes to run.
+
+#### Using Bootstrap replicates to build consensus trees, RAxML supports strict, majority rule, and extended majority rule consenus trees
+#### Strict consensus
+```
+raxmlHPC -m GTRCAT -J STRICT -o CAEEL -z RAxML_bootstrap.alphatub.bootstrap1 -n strict_alpha 
+```
+#### Majority rule
+```
+raxmlHPC -m GTRCAT -J MR -o CAEEL  -z RAxML_bootstrap.alphatub.bootstrap1 -n majority_alpha
+
+```
 ### Adding and Commiting files to Github repository
 ```
  git add  Replicate.alpha
