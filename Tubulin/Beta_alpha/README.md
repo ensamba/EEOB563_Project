@@ -13,4 +13,33 @@ $ alias raxmlHPC='raxmlHPC-PTHREADS-SSE3 -T2'
 ```
 raxmlHPC-PTHREADS-SSE3 -T2 -m PROTGAMMALG -p 12345 -s alpha_beta_aa.phy -n alpha_beta.lg
 ```
+#### To view the tree, I used newick tree viewer
+```
+module load newick_utils
+
+nw_display RAxML_bestTree.alpha_beta.lg
+```
+### Bootsrap analysis using 1000 replicates on hpc class
+Used a Slurm job script generator via hpc_class using the following script
+```
+#!/bin/bash
+
+#copy/paste this job script into a text file and submit with the command:
+#    sbatch thefilename
+
+#SBATCH --time=4:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=16   # 32 processor core(s) per node 
+#SBATCH --mem=62G   # maximum memory per node
+#SBATCH --job-name="my_raxml1"
+#SBATCH --mail-user=ensamba@iastate.edu   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="raxml.out1" # job standard output file (%j replaced by job id)
+
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+module load raxml
+raxmlHPC-PTHREADS-SSE3 -f a -m PROTGAMMALG -p 12345 -x 12345 -# 1000 -s alpha_beta_aa.phy -n alpha_beta.bootstrap
+```
 
