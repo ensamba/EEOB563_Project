@@ -10,4 +10,7 @@ RAxML versions installed on HPC but with long and ugly names (raxmlHPC-MPI-AVX, 
 $ alias raxmlHPC='raxmlHPC-PTHREADS-SSE3 -T2'
 ```
 ### Maximum likelihood analysis of alpha and beta sequences using PROTGAMMALG model of amino acid substitution (no outgroup)
+```
+raxmlHPC-PTHREADS-SSE3 -T2 -m PROTGAMMALG -p 12345 -s alpha_beta_aa.phy -n alpha_beta.lg
+```
 
