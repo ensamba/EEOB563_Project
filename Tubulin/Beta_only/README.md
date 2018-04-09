@@ -15,6 +15,7 @@ raxmlHPC-PTHREADS-SSE3 -T2 -m GTRGAMMA -o CAEEL_tbb-1 -p 12345 -s beta_nt.phy -n
 ```
 #### To view the tree, I used newick tree viewer
 module load newick_utils
+
 nw_display RAxML_bestTree.alphatub 
 
 #### Bootsrap analysis (1000 replicates) on hpc class using C.elegans as an outgroup
