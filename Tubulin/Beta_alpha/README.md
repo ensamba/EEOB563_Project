@@ -1,4 +1,4 @@
-## Codes for constructing phylogenetic relationships between beta and alpha tubulins and events that lead to sequence evolutions
+## Codes for constructing phylogenetic relationships between beta and alpha tubulins and comparison of sequence evolution rates between the two sequences
 
 #### Multiple sequence alignment
 ```
@@ -52,7 +52,8 @@ mafft --phylipout alpha_beta_aa.aln > alpha_beta_aa.phy
 ```
 
 #### Distance models
-I CalculateD 4 different matrices using 4 models available in protdist and perform a NJ analysis with each of them. I went ahead and calculated a strict consensus tree rooted using an appropriate outgroup.
+I CalculateD 4 different matrices using 4 models available in protdist and perform a NJ analysis with each of them. 
+I went ahead and calculated a strict consensus tree rooted using an appropriate outgroup.
 ```
 Protein distance algorithm, version 3.696
 
@@ -85,5 +86,93 @@ Y
   3                        Print out tree  Yes
   4       Write out trees onto tree file?  Yes
 ```
-#### Strict consensus tree rooted with an appropriate outgroup
-Returned an error and couldn't correct it
+I went a head and appended all the tree files from different models and run both a strict and majority consensus tree for all of them
+#### Strict consensus tree
+```
+Consensus tree program, version 3.696
+
+Settings for this run:
+ C         Consensus type (MRe, strict, MR, Ml):  strict
+ O                                Outgroup root:  No, use as outgroup species  1
+ R                Trees to be treated as Rooted:  No
+ T           Terminal type (IBM PC, ANSI, none):  ANSI
+ 1                Print out the sets of species:  Yes
+ 2         Print indications of progress of run:  Yes
+ 3                               Print out tree:  Yes
+ 4               Write out trees onto tree file:  Yes
+
+Are these settings correct? (type Y or the letter for one to change)
+Y
+```
+#### Majority rule tree
+```
+Settings for this run:
+ C         Consensus type (MRe, strict, MR, Ml):  Majority rule (extended)
+ O                                Outgroup root:  No, use as outgroup species  1
+ R                Trees to be treated as Rooted:  No
+ T           Terminal type (IBM PC, ANSI, none):  ANSI
+ 1                Print out the sets of species:  Yes
+ 2         Print indications of progress of run:  Yes
+ 3                               Print out tree:  Yes
+ 4               Write out trees onto tree file:  Yes
+
+Are these settings correct? (type Y or the letter for one to change)
+Y
+```
+
+### Hypothesis Testing and Detecting Selection with codeml
+codeml is a part of the PAML package, which is a suite of programs for phylogenetic analyses of DNA or protein sequences using maximum likelihood (ML). 
+My goal is to determine the rates of evolution in the beta tubulin genes and ascertain the underlying selection pressure. 
+For this particular analysis since I was dealing with  protein-coding DNA sequences, I set was seqtype set to 1 and carried out ML analysis using codon substitution models (e.g., Goldman and Yang 1994).
+
+I run the alpha and beta tubulin gene sequences separately and compared the omegas that is the dN/dS ratios to see the underlying selection pressure.
+
+
+#### codeml for beta tubulin gene sequences
+I set kappa and omega to be estimated and run codeml under the following settings
+```
+seqfile = beta_nt_no_out.aln  * sequence data filename
+      outfile = results1.txt   * main result file name
+
+        noisy = 9      * 0,1,2,3,9: how much rubbish on the screen
+      verbose = 1      * 1:detailed output
+      runmode = -2     * -2:pairwise
+
+      seqtype = 1      * 1:codons
+    CodonFreq = 2      * 0:equal, 1:F1X4, 2:F3X4, 3:F61
+        model = 0      *
+      NSsites = 0      *
+        icode = 0      * 0:universal code
+
+    fix_kappa = 0      * 1:kappa fixed, 0:kappa to be estimated
+        kappa = 2      * initial or fixed kappa
+
+    fix_omega = 0      * 1:omega fixed, 0:omega to be estimated
+        omega = 0.2  * 1st fixed omega value [change this]
+```
+To extract the omega values
+```
+vi results1.txt
+```
+#### codeml for alpha tubulin gene sequences
+```
+ seqfile = alpha_no_out.aln  * sequence data filename
+      outfile = results1.txt   * main result file name
+
+        noisy = 9      * 0,1,2,3,9: how much rubbish on the screen
+      verbose = 1      * 1:detailed output
+      runmode = -2     * -2:pairwise
+
+      seqtype = 1      * 1:codons
+    CodonFreq = 2      * 0:equal, 1:F1X4, 2:F3X4, 3:F61
+        model = 0      *
+      NSsites = 0      *
+        icode = 0      * 0:universal code
+
+    fix_kappa = 0      * 1:kappa fixed, 0:kappa to be estimated
+        kappa = 2      * initial or fixed kappa
+
+    fix_omega = 0      * 1:omega fixed, 0:omega to be estimated
+        omega = 0.2  * 1st fixed omega value [change this]
+```
+
