@@ -1,0 +1,85 @@
+
+Consensus tree program, version 3.696
+
+Species in order: 
+
+  1. bTUBB
+  2. bTUBB2A
+  3. bTUBB2B
+  4. bTUBB4A
+  5. bTUBB4B
+  6. bTUBB3
+  7. bTUBB6
+  8. bTUBB8
+  9. aTUBA8
+  10. aTUBA4B
+
+  11. aTUBA4A
+  12. aTUBA1C
+  13. aTUBA1A
+  14. aTUBA3C
+  15. aTUBA3E
+  16. aTUBA3D
+  17. aTUBA1B
+  18. bTUBB1
+
+
+Sets included in the consensus tree
+
+Set (species in order)     How many times out of    4.00
+
+*****..... ........          4.00
+.....**... ........          4.00
+.****..... ........          4.00
+.......... ...***..          4.00
+********.. ........          4.00
+.**....... ........          4.00
+........** *******.          4.00
+.......... ...**...          4.00
+...**..... ........          4.00
+
+
+Sets NOT included in consensus tree: NONE
+
+
+Strict consensus tree
+
+CONSENSUS TREE:
+
+          +-------------------------------bTUBB8
+          |
+          |                       +-------bTUBB2A
+          |               +-------|
+          |               |       +-------bTUBB2B
+          |       +-------|
+  +-------|       |       |       +-------bTUBB4B
+  |       +-------|       +-------|
+  |       |       |               +-------bTUBB4A
+  |       |       |
+  |       |       +-----------------------bTUBB
+  |       |
+  |       |                       +-------bTUBB6
+  |       +-----------------------|
+  |                               +-------bTUBB3
+  |
+  |               +-----------------------aTUBA8
+  |               |
+  |               +-----------------------aTUBA4B
+  |               |
+  |               +-----------------------aTUBA1A
+  |               |
+  |               +-----------------------aTUBA1B
+  |               |
+  +---------------|       +---------------aTUBA3D
+  |               +-------|
+  |               |       |       +-------aTUBA3E
+  |               |       +-------|
+  |               |               +-------aTUBA3C
+  |               |
+  |               +-----------------------aTUBA1C
+  |               |
+  |               +-----------------------aTUBA4A
+  |
+  +---------------------------------------bTUBB1
+
+
