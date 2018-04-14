@@ -15,7 +15,7 @@ I hypothesize beta isotypes to be orthologous to each other and expect them to f
 
 (b) Replicate phylogenetic analysis of mammalian alpha-tubulin as presented by V.K. Khodiyar et al. 2007, in their paper entitled " A revised nomenclature for the human and rodent α-tubulin gene family) which categorized the 09 alpha tubulin genes into 4 major groups using neighbor joining.  I would like to use maximum likelihood instead of NJ to construct phylogeny of alpha tubulins and compare it with their results. (nucleotide)
 
-(c) Determine molecular evolutionary relationship between the two major classes of mammalian tubulin using Neighbor joining. By using the NJ algorithm, I expect the two tubulin classes to be paralogous to each other and orthologous with in beta and alpha isotypes. (protein)
+(c) Determine the selection pressure and molecular evolutionary relationship between the two major classes of mammalian tubulin using Neighbor joining. By using the NJ algorithm, I expect the two tubulin classes to be paralogous to each other and orthologous with in beta and alpha isotypes. (protein)
 
 #### Methods
 Sources of data: UniProtKB. and NCBI databases for protein sequences and nucleotide sequences respectively.
