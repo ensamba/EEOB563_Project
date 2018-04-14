@@ -40,6 +40,12 @@ I will build a strict and majority consensus tree from the protein and nucleotid
 #### Bootstrap tree analysis
 One thousand bootstrap replicates will be performed for each analysis. In all the above methods of phylogenetic construction of my taxa, I will quantify the branching confidence in the inferred evolutionary tree by bootstrapping with 1000 iterations. The bootstrap origin classification confidence is the fraction of bootstrapped trees that fall into the same category as the real tree, times 1000.
 
+#### Hypothesis Testing and Detecting Selection with codeml
+
+codeml is a part of the PAML package, which is a suite of programs for phylogenetic analyses of DNA or protein sequences using maximum likelihood (ML). My goal is to determine the rates of evolution in the beta tubulin genes and ascertain the underlying selection pressure. For this particular analysis since I was dealing with protein-coding DNA sequences, I set was seqtype set to 1 and carried out ML analysis using codon substitution models (e.g., Goldman and Yang 1994).
+
+I run the alpha and beta tubulin gene sequences separately and compared the omegas that is the dN/dS ratios to see the underlying selection pressure.
+
 #### Tree visualization
 I will employ the following packages to visualize trees especially those with bootstrap support values. 
 Newick tree viewer
