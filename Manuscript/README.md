@@ -1,4 +1,4 @@
-## EEOB563_Project
+## EEOB563_Project Proposal
 
 ### Gene Family Evolution of Mammalian beta-tubulin
 #### Introduction 
